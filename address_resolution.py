@@ -22,16 +22,18 @@ class SubnetHandler():
 	# String -> String
 	def name_for_address(self, address):
 		largest_prefix_len = 0
-		name = ""
+		name = None
 		ip_address = netaddr.IPAddress(address)
 		for subnet_string, subnet_name in self.subnets.iteritems():
 			subnet = netaddr.IPNetwork(subnet_string)
 			if ip_address in subnet and subnet.prefixlen > largest_prefix_len:
 				largest_prefix_len = subnet.prefixlen
 				name = subnet_name
-		return None
+		return name
 
+# Testing
 if __name__ == "__main__":
 	handler = SubnetHandler("Subnets.txt")
 	print handler.name_for_address("128.135.1.1")
-	print handler.name_for_address("128.135.2.1")
+	print handler.name_for_address("128.135.6.1")
+	print handler.name_for_address("128.135.9.1")

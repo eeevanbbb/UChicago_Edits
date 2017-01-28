@@ -56,6 +56,7 @@ class WikipediaListener():
 def print_edit(edit):
 	print edit
 
+# Testing
 if __name__ == "__main__":
 	listener = WikipediaListener(print_edit)
 	listener.start()
