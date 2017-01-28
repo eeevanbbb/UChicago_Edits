@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in {1..254}
+do
+  echo "128.135.$i.0/24 = \"\""
+done

@@ -1,0 +1,7 @@
+#!/bin/bash
+for i in {0..255}
+do
+  subnet=128.135.$i.0
+  dns_info="$(host $subnet)"
+  echo "$subnet: $dns_info"
+done
