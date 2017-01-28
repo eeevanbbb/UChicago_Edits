@@ -32,6 +32,6 @@ class SubnetHandler():
 		return None
 
 if __name__ == "__main__":
-	handler = SubnetHandler("subnets.txt")
+	handler = SubnetHandler("Subnets.txt")
 	print handler.name_for_address("128.135.1.1")
 	print handler.name_for_address("128.135.2.1")
