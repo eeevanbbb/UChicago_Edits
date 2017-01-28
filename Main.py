@@ -2,7 +2,7 @@ import tweet
 import listen
 import address_resolution
 
-SUBNETS_FILE = "subnets.txt"
+SUBNETS_FILE = "Subnets.txt"
 
 class EditBot():
 	def __init__(self):
