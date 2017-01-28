@@ -15,8 +15,6 @@ class TweetHandler():
 			print "One or more of the keys are missing from the environment"
 			self.api = None
 
-
-
 	def send_tweet(self, tweet):
 		if self.api is not None:
 			self.api.update_status(tweet)
