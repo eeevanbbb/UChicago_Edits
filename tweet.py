@@ -20,5 +20,6 @@ class TweetHandler():
 	def send_tweet(self, tweet):
 		if self.api is not None:
 			self.api.update_status(tweet)
+			print "Sending tweet: %s" % tweet
 		else:
 			print "(NO API) %s" % tweet
