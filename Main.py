@@ -19,6 +19,7 @@ class EditBot():
 		self.edit_count += 1
 		location = self.address_resolver.name_for_address(edit.user)
 		if location is not None:
+			print "Edit detected from %s" % edit.user
 			self.tweet_count += 1
 			tweet = "'%s' edited from %s @UChicago %s" % (edit.page_title, location, edit.url)
 			if len(tweet) > 140:

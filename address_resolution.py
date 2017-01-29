@@ -15,7 +15,7 @@ class SubnetHandler():
 					comps = line.split("=")
 					address_ranges = [adrange.replace(" ", "") for adrange in comps[0].split(",")]
 					quoted_regex = re.compile('"[^"]*"') #http://stackoverflow.com/questions/2076343/extract-string-from-between-quotations
-					name = quoted_regex.findall(comps[1])[0]
+					name = quoted_regex.findall(comps[1])[0].replace('"', '')
 					for address_range in address_ranges:
 						self.subnets[address_range] = name
 
