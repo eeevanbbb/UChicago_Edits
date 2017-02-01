@@ -1,8 +1,29 @@
+import time
+import sys
+
 import tweet
 import listen
 import address_resolution
 
 SUBNETS_FILE = "Subnets.txt"
+
+#Prepend time to all log output (http://stackoverflow.com/questions/4883789/adding-a-datetime-stamp-to-python-print)
+old_out = sys.stdout
+class new_out:
+    nl = True
+
+    def write(self, x):
+        """Write function overloaded."""
+        if x == '\n':
+            old_out.write(x)
+            self.nl = True
+        elif self.nl:
+            old_out.write('[%s] %s' % (time.ctime(), x))
+            self.nl = False
+        else:
+            old_out.write(x)
+
+sys.stdout = new_out()
 
 class EditBot():
 	def __init__(self):
@@ -29,5 +50,6 @@ class EditBot():
 			print "Edit count: %s, Tweet count: %s" % (str(self.edit_count), str(self.tweet_count))
 
 if __name__ == "__main__":
+	print "Bot Started"
 	bot = EditBot()
 	bot.start()
